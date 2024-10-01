@@ -50,7 +50,7 @@ for i in range(0, total_count, batch_size):
             "url": "jdbc:mysql://database-2.ctqw2uoc8tsd.ap-south-1.rds.amazonaws.com/rdsdatabases",
             "dbtable": "generatetbdatas",
             "user": "admin",
-            "password": "Bls4967at"
+            "password": "Bls4967at123"
         },
         transformation_ctx="datasink"
     )
