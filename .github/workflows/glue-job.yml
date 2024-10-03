@@ -1,9 +1,7 @@
-name: Schedule AWS Glue Job
+name: Manually Trigger AWS Glue Job
 
 on:
-  schedule:
-    # Schedule to run at 4:10 PM UTC every day
-    - cron: '35 16 * * *'
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   trigger-glue-job:
@@ -21,6 +19,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+
+      # Test AWS CLI
+      - name: Verify AWS CLI and region
+        run: |
+          aws sts get-caller-identity
+          echo "Region: ${{ secrets.AWS_REGION }}"
 
       # Start the Glue job
       - name: Start AWS Glue job
