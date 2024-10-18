@@ -2,7 +2,7 @@ name: Scheduled AWS Glue Job
 
 on:
   schedule:
-    - cron: '37 2 * * *'  # Schedule to run at 2:30 AM UTC (8:00 AM IST) every day
+##   - cron: '37 2 * * *'  # Schedule to run at 2:30 AM UTC (8:00 AM IST) every day
   workflow_dispatch:  # Optional: still allows manual triggering if needed
 
 jobs:
